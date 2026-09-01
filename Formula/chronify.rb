@@ -3,15 +3,17 @@ class Chronify < Formula
 
   desc "Menu bar work tracker with local-AI daily statuses and invoicing"
   homepage "https://github.com/zepuff/Chronify"
-  url "https://github.com/zepuff/Chronify/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "431b7260d8f59f4ed6ce8c719fc955cd3cb2201604b954dffd4b36cb279d8e2d"
+  url "https://github.com/zepuff/Chronify/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "ce4d9f32a1ec17c3f195dde3e6aba8b4ddd9627243194c13cb7a1f07b0e04573"
   license "GPL-3.0-or-later"
 
-  # Pillow is built from source by Homebrew, so its image libraries are needed
+  # Pillow and lxml are built from source by Homebrew, so their C libraries are needed
   depends_on "pkgconf" => :build
   depends_on "freetype"
   depends_on "jpeg-turbo"
   depends_on "libtiff"
+  depends_on "libxml2"
+  depends_on "libxslt"
   depends_on "libyaml"
   depends_on "little-cms2"
   depends_on :macos
@@ -35,9 +37,29 @@ class Chronify < Formula
     sha256 "6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3"
   end
 
+  resource "docxtpl" do
+    url "https://files.pythonhosted.org/packages/b2/b4/4435f3fcb1357ec441079c4af1dda3ea926fad6dcead4aed2d93b369944e/docxtpl-0.20.2.tar.gz"
+    sha256 "eddf3350d70b4d123208e801d585bcb313d21044a377a14f75a66d0965841de1"
+  end
+
   resource "idna" do
     url "https://files.pythonhosted.org/packages/5f/f7/abb373e5757eaec4b922b92f97ec8d6d7e057cf06778247604fbc4e7c3f3/idna-3.19.tar.gz"
     sha256 "5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15"
+  end
+
+  resource "jinja2" do
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
+  end
+
+  resource "lxml" do
+    url "https://files.pythonhosted.org/packages/ad/a9/970b8fa0ecc4fbf1dfaed0d89bbc1fc1421b25ec26a2038c91e872dc6c8e/lxml-6.1.2.tar.gz"
+    sha256 "1055241852f2b02068af4a625a5d32c087db193c12251928af2562ecd2239f18"
+  end
+
+  resource "markupsafe" do
+    url "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz"
+    sha256 "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698"
   end
 
   resource "pillow" do
@@ -60,6 +82,11 @@ class Chronify < Formula
     sha256 "810f97b210cfd93704d240860286dfd6df09f9f1c52525fc5c2166723aea3f9e"
   end
 
+  resource "python-docx" do
+    url "https://files.pythonhosted.org/packages/a9/f7/eddfe33871520adab45aaa1a71f0402a2252050c14c7e3009446c8f4701c/python_docx-1.2.0.tar.gz"
+    sha256 "7bc9d7b7d8a69c9c02ca09216118c86552704edc23bac179283f2e38f86220ce"
+  end
+
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/05/8e/961c0007c59b8dd7729d542c61a4d537767a59645b82a0b521206e1e25c2/pyyaml-6.0.3.tar.gz"
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
@@ -73,6 +100,11 @@ class Chronify < Formula
   resource "rumps" do
     url "https://files.pythonhosted.org/packages/b2/e2/2e6a47951290bd1a2831dcc50aec4b25d104c0cf00e8b7868cbd29cf3bfe/rumps-0.4.0.tar.gz"
     sha256 "17fb33c21b54b1e25db0d71d1d793dc19dc3c0b7d8c79dc6d833d0cffc8b1596"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
+    sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
   end
 
   resource "urllib3" do
