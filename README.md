@@ -12,7 +12,7 @@ brew install chronify
 
 `brew trust` is Homebrew confirming you're willing to run a formula from outside its official repository. Skipping it stops the install with an "untrusted tap" error.
 
-Requires macOS. The first install takes a few minutes — this tap ships no pre-built bottles, so Pillow and the PyObjC frameworks are compiled from source.
+Requires macOS. The first install takes a couple of minutes — this tap ships no pre-built bottles, so Pillow, lxml and the PyObjC frameworks are compiled from source. Later upgrades are much quicker.
 
 ## Run
 
@@ -26,11 +26,28 @@ To start it automatically at login:
 brew services start chronify
 ```
 
+macOS asks for two permissions on first launch. **Screen Recording** is what makes window titles readable — without it every entry is logged as a bare app name with no task breakdown. **Notifications** are needed for timed reminders. Both are granted in System Settings → Privacy & Security.
+
+## Optional extras
+
+Neither is required; Chronify works without them.
+
+```bash
+brew install ollama && brew services start ollama && ollama pull qwen2.5:3b
+brew install --cask libreoffice
+```
+
+Ollama writes the daily status as prose instead of a plain list of your notes, and it runs entirely on your Mac. LibreOffice converts finished invoices to PDF — without it the `.docx` is still produced.
+
 ## Upgrade
 
 ```bash
 brew update && brew upgrade chronify
 ```
+
+macOS ties Screen Recording to the exact binary, so an upgrade clears that permission and it has to be granted again. Chronify says so at launch.
+
+Settings and data in `~/.work_tracker/` are never touched by an upgrade.
 
 ## Uninstall
 
