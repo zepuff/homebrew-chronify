@@ -3,8 +3,8 @@ class Chronify < Formula
 
   desc "Menu bar work tracker with local-AI daily statuses and invoicing"
   homepage "https://github.com/zepuff/Chronify"
-  url "https://github.com/zepuff/Chronify/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "ce4d9f32a1ec17c3f195dde3e6aba8b4ddd9627243194c13cb7a1f07b0e04573"
+  url "https://github.com/zepuff/Chronify/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "cad7a7bc00b722cb0c27385a15b387300d6676f53f5dc2653c992ad740f8b37d"
   license "GPL-3.0-or-later"
 
   # Pillow and lxml are built from source by Homebrew, so their C libraries are needed
