@@ -3,8 +3,8 @@ class Chronify < Formula
 
   desc "Menu bar work tracker with local-AI daily statuses and invoicing"
   homepage "https://github.com/zepuff/Chronify"
-  url "https://github.com/zepuff/Chronify/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "27a8a72da084f08a284fb589aeec3e97bcd2da9aef9d6712d98986343a838c57"
+  url "https://github.com/zepuff/Chronify/archive/refs/tags/v0.3.1.tar.gz"
+  sha256 "5730e15cc2a4be11e6920de8db203b4b370829c732deaac3f297dc51504d05c3"
   license "GPL-3.0-or-later"
 
   depends_on "python@3.13"
